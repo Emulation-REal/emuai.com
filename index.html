@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrokBot AI - Ultimate Chat Experience</title>
+    <title>Emulation AI - Chat Bot</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
     <style>
@@ -1549,7 +1549,7 @@
         <div id="sidebar-header">
             <div id="logo">
                 <i class="fas fa-robot"></i>
-                <span>GrokBot AI</span>
+                <span>Emulation AI</span>
             </div>
             <button id="new-chat-btn" onclick="createNewChat()">
                 <i class="fas fa-plus"></i>
@@ -1571,7 +1571,7 @@
         
         <div class="model-indicator">
             <div class="model-status"></div>
-            <span>Gemini 1.5 Pro</span>
+            <span>Gemini 1.5 Flash</span>
         </div>
     </div>
 
@@ -1605,7 +1605,7 @@
             <div class="welcome-screen">
                 <h1 class="welcome-title">
                     <i class="fas fa-robot"></i>
-                    GrokBot AI
+                    Emulation AI
                 </h1>
                 <p class="welcome-subtitle">
                     Your ultimate AI companion powered by Google's Gemini
@@ -1615,7 +1615,7 @@
                         <i class="fas fa-brain feature-icon"></i>
                         <h3 class="feature-title">Advanced Intelligence</h3>
                         <p class="feature-description">
-                            Powered by Gemini 1.5 Pro with advanced reasoning capabilities and deep understanding
+                            Powered by Gemini 1.5 Flash with advanced reasoning capabilities and deep understanding
                         </p>
                     </div>
                     <div class="feature-card">
@@ -1663,13 +1663,13 @@
                 <div class="typing-dot"></div>
                 <div class="typing-dot"></div>
             </div>
-            <span>GrokBot is thinking...</span>
+            <span>Emulation AI is thinking...</span>
         </div>
 
         <div id="input-area">
             <div class="input-container">
                 <div id="file-preview-container"></div>
-                <textarea id="message-input" placeholder="✨ Ask GrokBot anything..." oninput="autoResize(this)" onkeydown="handleKeyDown(event)"></textarea>
+                <textarea id="message-input" placeholder="✨ Ask Emulation AI anything..." oninput="autoResize(this)" onkeydown="handleKeyDown(event)"></textarea>
             </div>
             <div class="input-toolbar">
                 <div class="input-actions">
@@ -1732,9 +1732,9 @@
                 <div class="form-group">
                     <label for="model-select">AI Model</label>
                     <select id="model-select" onchange="saveModel()">
-                        <option value="gemini-1.5-pro">Gemini 1.5 Pro (Recommended)</option>
-                        <option value="gemini-1.5-flash">Gemini 1.5 Flash (Fast)</option>
-                        <option value="gemini-1.0-pro">Gemini 1.0 Pro (Legacy)</option>
+                        <option value="gemini-1.5-pro">Gemini 1.5 Pro (NOT WORKING)</option>
+                        <option value="gemini-1.5-flash">Gemini 1.5 Flash (Working)</option>
+                        <option value="gemini-1.0-pro">Gemini 1.0 Pro (NOT WORKING)</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -1795,7 +1795,7 @@
                 <h3><i class="fas fa-info-circle"></i> About</h3>
                 <div class="form-group">
                     <p style="color: var(--text-secondary); line-height: 1.6;">
-                        GrokBot AI v2.0<br>
+                        Emulation AI v2.0<br>
                         Powered by Google Gemini<br>
                         Built with modern web technologies<br>
                         <a href="#" style="color: var(--accent-primary);">View Documentation</a>
@@ -1836,7 +1836,7 @@
 
         // Initialize Application
         function init() {
-            console.log('🚀 GrokBot AI Initializing...');
+            console.log('🚀 Emulation AI Initializing...');
             
             initParticles();
             initSettings();
@@ -1858,7 +1858,7 @@
                 document.getElementById('toggle-sidebar-btn').style.display = 'flex';
             }
             
-            console.log('✅ GrokBot AI Ready!');
+            console.log('✅ Emulation AI Ready!');
         }
 
         // Enhanced Particle System
@@ -2033,7 +2033,7 @@
                 <div class="welcome-screen">
                     <h1 class="welcome-title">
                         <i class="fas fa-robot"></i>
-                        GrokBot AI
+                        Emulation AI
                     </h1>
                     <p class="welcome-subtitle">
                         Your ultimate AI companion powered by Google's Gemini
@@ -2043,7 +2043,7 @@
                             <i class="fas fa-brain feature-icon"></i>
                             <h3 class="feature-title">Advanced Intelligence</h3>
                             <p class="feature-description">
-                                Powered by Gemini 1.5 Pro with advanced reasoning capabilities and deep understanding
+                                Powered by Gemini 1.5 Flash with advanced reasoning capabilities and deep understanding
                             </p>
                         </div>
                         <div class="feature-card">
@@ -2110,7 +2110,7 @@
             
             let html = `
                 <div class="message-header">
-                    <div class="message-sender">${isUser ? 'You' : 'GrokBot AI'}</div>
+                    <div class="message-sender">${isUser ? 'You' : 'Emulation AI'}</div>
                     <div class="message-time">${timestamp}</div>
                 </div>
                 <div class="markdown">${renderMarkdown(content || '')}</div>
@@ -2265,7 +2265,7 @@
                 const history = [
                     { 
                         role: 'model', 
-                        parts: [{ text: 'You are GrokBot, an advanced AI assistant created by xAI. You are helpful, witty, and provide accurate information. Format code blocks properly and be engaging in your responses.' }] 
+                        parts: [{ text: 'You are Emulation AI, an advanced AI assistant created by Emulation. You are helpful, witty, and provide accurate information. Format code blocks properly and be engaging in your responses.' }] 
                     },
                     ...currentChat.history
                 ];
@@ -2592,7 +2592,7 @@
 
             try {
                 showStatus('Testing API connection...', 'info');
-                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${apiKey}`, {
+                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -2775,7 +2775,7 @@
         function shareChat() {
             if (navigator.share) {
                 navigator.share({
-                    title: 'GrokBot AI Chat',
+                    title: 'Emulation AI Chat',
                     text: currentChat.title,
                     url: window.location.href
                 });
@@ -2795,7 +2795,7 @@
                 const content = messageElement.querySelector('.markdown').textContent;
                 if (navigator.share) {
                     navigator.share({
-                        title: 'GrokBot AI Message',
+                        title: 'Emulation AI Message',
                         text: content
                     });
                 } else {
