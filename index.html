@@ -3161,33 +3161,34 @@ Be helpful, accurate, and professional. Format all code blocks properly with lan
             }
         }
 
-        async function testApiKey() {
-            if (!apiKey) {
-                showStatus('Please enter an API key first', 'error');
-                return;
-            }
+async function testApiKey() {
+    if (!apiKey) {
+        showStatus('Please enter an API key first', 'error');
+        return;
+    }
 
-            try {
-                showStatus('Testing API connection...', 'info');
-                const res = await fetch(`https://aiplatform.googleapis.com/v1/projects/991763892916/locations/global/publishers/google/models/gemini-2.5-flash:generateContent
-?key=${apiKey}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ role: 'user', parts: [{ text: 'Hello' }] }]
-                    })
-                });
+    try {
+        showStatus('Testing API connection...', 'info');
+        const res = await fetch(`https://aiplatform.googleapis.com/v1/projects/991763892916/locations/global/publishers/google/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                prompt: { text: 'Hello' },
+                parameters: { temperature: 0.7, maxOutputTokens: 100 }
+            })
+        });
 
-                if (res.ok) {
-                    showStatus('API key is valid!', 'success');
-                } else {
-                    const error = await res.json();
-                    showStatus(`API Error: ${error.error?.message || 'Invalid API key'}`, 'error');
-                }
-            } catch (error) {
-                showStatus('Connection failed: ' + error.message, 'error');
-            }
+        if (res.ok) {
+            showStatus('API key is valid!', 'success');
+        } else {
+            const error = await res.json();
+            showStatus(`API Error: ${error.error?.message || 'Invalid API key'}`, 'error');
         }
+    } catch (error) {
+        showStatus('Connection failed: ' + error.message, 'error');
+    }
+}
+
 
         function saveModel() {
             settings.model = document.getElementById('model-select').value;
