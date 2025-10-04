@@ -3168,23 +3168,22 @@ async function testApiKey() {
     }
 
     const requestBody = {
-    contents: [
-        { 
-            role: 'user', 
-            parts: [{ text: 'Hello' }] 
-        }
-    ]
-};
+        contents: [
+            { 
+                role: 'user', 
+                parts: [{ text: 'Hello' }] 
+            }
+        ]
+    };
 
+    try { // <--- Missing try block
+        showStatus('Testing API connection...', 'info');
 
- const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(requestBody)
-});
-
-
-
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestBody)
+        });
 
         if (res.ok) {
             showStatus('API key is valid!', 'success');
@@ -3196,6 +3195,7 @@ async function testApiKey() {
         showStatus('Connection failed: ' + error.message, 'error');
     }
 }
+
 
 
         function saveModel() {
