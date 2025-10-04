@@ -3169,14 +3169,13 @@ async function testApiKey() {
 
     try {
         showStatus('Testing API connection...', 'info');
-        const res = await fetch(`https://aiplatform.googleapis.com/v1/projects/991763892916/locations/global/publishers/google/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                prompt: { text: 'Hello' },
-                parameters: { temperature: 0.7, maxOutputTokens: 100 }
-            })
-        });
+       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${settings.model}:generateContent?key=${apiKey}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(requestBody)
+});
+
+
 
         if (res.ok) {
             showStatus('API key is valid!', 'success');
@@ -3197,9 +3196,7 @@ async function testApiKey() {
             // Update model indicator
             const indicator = document.querySelector('.model-indicator span');
             const modelNames = {
-                'gemini-1.5-pro': 'Emulation AI Pro Active',
                 'gemini-2.5-flash': 'Emulation AI Flash Active',
-                'gemini-1.0-pro': 'Emulation AI Legacy Active'
             };
             indicator.textContent = modelNames[settings.model];
             showStatus('Model updated successfully');
