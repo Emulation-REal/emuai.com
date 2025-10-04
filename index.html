@@ -3167,6 +3167,16 @@ async function testApiKey() {
         return;
     }
 
+    const requestBody = {
+    contents: [
+        { 
+            role: 'user', 
+            parts: [{ text: 'Hello' }] 
+        }
+    ]
+};
+
+
     try {
         showStatus('Testing API connection...', 'info');
        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${settings.model}:generateContent?key=${apiKey}`, {
