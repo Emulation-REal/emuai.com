@@ -3169,7 +3169,7 @@ Be helpful, accurate, and professional. Format all code blocks properly with lan
 
             try {
                 showStatus('Testing API connection...', 'info');
-                const res = await fetch(`https://aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/global/publishers/google/models/gemini-2.5-flash:generateContent
+                const res = await fetch(`https://aiplatform.googleapis.com/v1/projects/991763892916/locations/global/publishers/google/models/gemini-2.5-flash:generateContent
 ?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -3197,7 +3197,7 @@ Be helpful, accurate, and professional. Format all code blocks properly with lan
             const indicator = document.querySelector('.model-indicator span');
             const modelNames = {
                 'gemini-1.5-pro': 'Emulation AI Pro Active',
-                'gemini-1.5-flash': 'Emulation AI Flash Active',
+                'gemini-2.5-flash': 'Emulation AI Flash Active',
                 'gemini-1.0-pro': 'Emulation AI Legacy Active'
             };
             indicator.textContent = modelNames[settings.model];
