@@ -787,15 +787,15 @@
             border-radius: 4px;
         }
 
-   /* Enhanced Messages */
 .message {
-    margin-bottom: 48px; /* slightly more vertical spacing */
+    margin-bottom: 36px;
     display: flex;
-    gap: 36px; /* increase gap between avatar and content */
+    gap: 18px;
     animation: messageSlide 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    justify-content: space-between; /* spread to edges */
+    justify-content: flex-start; /* default to left */
 }
+
 
 
         @keyframes messageSlide {
@@ -811,9 +811,10 @@
             }
         }
 
-        .message.user {
-            flex-direction: row-reverse;
-        }
+.message.user {
+    flex-direction: row-reverse; /* keep avatar on right */
+    justify-content: flex-end; /* push user messages to right edge */
+}
 
         .message-avatar {
             width: 48px;
