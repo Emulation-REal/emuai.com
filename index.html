@@ -3143,25 +3143,12 @@ Be helpful, accurate, and professional. Format all code blocks properly with lan
             });
         }
 
-        // API and Settings Functions
-        function saveApiKey() {
-            apiKey = document.getElementById('api-key-input').value;
-            localStorage.setItem('gemini-api-key', apiKey);
-            showStatus('API key saved successfully');
-        }
-
-        function clearApiKey() {
-            if (confirm('Are you sure you want to clear your API key?')) {
-                apiKey = '';
-                localStorage.removeItem('gemini-api-key');
-                document.getElementById('api-key-input').value = '';
-                showStatus('API key cleared', 'warning');
-            }
-        }
+      // API Configuration
+const apiKey = 'AIzaSyAJX0HkLHYcOh0UULKzD2ZkavOpxHIZl7g'; // Replace with your actual API key
 
 async function testApiKey() {
     if (!apiKey) {
-        showStatus('Please enter an API key first', 'error');
+        showStatus('Please set an API key in the code', 'error');
         return;
     }
 
@@ -3174,7 +3161,7 @@ async function testApiKey() {
         ]
     };
 
-    try { // <--- Missing try block
+    try {
         showStatus('Testing API connection...', 'info');
 
         const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
@@ -3193,6 +3180,8 @@ async function testApiKey() {
         showStatus('Connection failed: ' + error.message, 'error');
     }
 }
+
+
 
 
 
