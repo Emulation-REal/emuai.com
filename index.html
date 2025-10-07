@@ -2281,7 +2281,7 @@
             temperature: 0.7,
             maxTokens: 2048,
             fontSize: 'medium',
-            model: 'gemini-1.5-pro'
+            model: 'Emulation-2.5'
         };
 
         // Initialize Application
@@ -2294,13 +2294,6 @@
             currentChatId = chats[0].id;
             renderChatList();
             loadCurrentChat();
-
-            const savedKey = localStorage.getItem('gemini-api-key');
-            if (savedKey) {
-                document.getElementById('api-key-input').value = savedKey;
-                apiKey = savedKey;
-            }
-
             applyTheme();
             setupEventListeners();
 
