@@ -2218,7 +2218,6 @@
                     <label>Storage Management</label>
                     <div class="button-group">
                         <button onclick="clearAllChats()" class="btn-danger">Clear All Chats</button>
-                        <button onclick="clearApiKey()" class="btn-danger">Clear API Key</button>
                     </div>
                 </div>
             </div>
@@ -3145,8 +3144,7 @@ async function testApiKey() {
 
     try {
         showStatus('Testing API connection...', 'info');
-
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${settings.model}:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestBody)
