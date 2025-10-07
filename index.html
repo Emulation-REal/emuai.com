@@ -3165,18 +3165,16 @@ async function testApiKey() {
 
 
 
-        function saveModel() {
-            settings.model = document.getElementById('model-select').value;
-            saveSettings();
-
-            // Update model indicator
-            const indicator = document.querySelector('.model-indicator span');
-            const modelNames = {
-                'gemini-2.5-flash': 'Emulation AI Flash Active',
-            };
-            indicator.textContent = modelNames[settings.model];
-            showStatus('Model updated successfully');
-        }
+       function saveModel() {
+    settings.model = document.getElementById('model-select').value;
+    saveSettings();
+    const indicator = document.querySelector('.model-indicator span');
+    const modelNames = {
+        'gemini-2.5-flash': 'Emulation AI Flash Active',
+    };
+    indicator.textContent = modelNames[settings.model] || 'Unknown Model';
+    showStatus('Model updated successfully');
+}
 
         // Chat Management Functions
         function clearCurrentChat() {
