@@ -2281,7 +2281,7 @@
             temperature: 0.7,
             maxTokens: 2048,
             fontSize: 'medium',
-            model: 'Emulation-2.5'
+            model: 'gemini-2.5-flash'
         };
 
         // Initialize Application
@@ -2336,18 +2336,19 @@
 
         // Settings Management
         function initSettings() {
-            const savedSettings = localStorage.getItem('emulation-ai-settings');
-            if (savedSettings) {
-                settings = { ...settings, ...JSON.parse(savedSettings) };
-            }
+    const savedSettings = localStorage.getItem('emulation-ai-settings');
+    if (savedSettings) {
+        settings = { ...settings, ...JSON.parse(savedSettings) };
+    }
 
-            document.getElementById('temperature-range').value = settings.temperature;
-            document.getElementById('temperature-value').textContent = settings.temperature;
-            document.getElementById('max-tokens').value = settings.maxTokens;
-            document.getElementById('font-size').value = settings.fontSize;
-
-            applyFontSize();
-        }
+    document.getElementById('temperature-range').value = settings.temperature;
+    document.getElementById('temperature-value').textContent = settings.temperature;
+    document.getElementById('max-tokens').value = settings.maxTokens;
+    document.getElementById('font-size').value = settings.fontSize;
+    document.getElementById('model-select').value = settings.model; // Add this
+    saveModel(); // Add this to sync indicator
+    applyFontSize();
+}
 
         function saveSettings() {
             localStorage.setItem('emulation-ai-settings', JSON.stringify(settings));
