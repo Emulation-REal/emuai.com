@@ -787,11 +787,14 @@
             border-radius: 4px;
         }
 
-        /* Enhanced Messages */
-     .message {
-    margin-bottom: 48px; /* increased vertical spacing */
-    gap: 36px; /* increase space between avatar and message */
-    justify-content: space-between; /* push content toward edges */
+   /* Enhanced Messages */
+.message {
+    margin-bottom: 48px; /* slightly more vertical spacing */
+    display: flex;
+    gap: 36px; /* increase gap between avatar and content */
+    animation: messageSlide 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    justify-content: space-between; /* spread to edges */
 }
 
 
