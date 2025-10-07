@@ -788,13 +788,12 @@
         }
 
         /* Enhanced Messages */
-        .message {
-            margin-bottom: 36px;
-            display: flex;
-            gap: 18px;
-            animation: messageSlide 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
+     .message {
+    margin-bottom: 48px; /* increased vertical spacing */
+    gap: 36px; /* increase space between avatar and message */
+    justify-content: space-between; /* push content toward edges */
+}
+
 
         @keyframes messageSlide {
             from { 
@@ -864,7 +863,7 @@
         }
 
         .message-content {
-            max-width: 82%;
+            max-width: 70%;
             padding: 24px 28px;
             border-radius: var(--border-radius-lg);
             position: relative;
@@ -873,6 +872,7 @@
             transition: all var(--animation-speed) cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--border);
         }
+
 
         .message.user .message-content {
             background: var(--user-msg);
@@ -2159,7 +2159,7 @@
                 <div class="typing-dot"></div>
                 <div class="typing-dot"></div>
             </div>
-            <span>Emulation AI is analyzing...</span>
+            <span>Emulation AI is typing...</span>
         </div>
 
         <div id="input-area">
