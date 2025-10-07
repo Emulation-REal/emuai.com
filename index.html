@@ -2771,12 +2771,12 @@
 
         // Enhanced AI Communication with better prompt engineering
         async function sendMessage() {
-            if (isSending || !apiKey) {
-                if (!apiKey) {
-                    showStatus('Please save your API key first!', 'error');
-                    openSettings();
+                if (isSending || !apiKey) {
+            if (!apiKey) {
+        showStatus('Please set an API key in the code', 'error');
+    }
+    return;
                 }
-                return;
             }
 
             const input = document.getElementById('message-input');
