@@ -86,7 +86,7 @@
     justify-content: center;
     z-index: 9999;
     font-family: 'Arial', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #00d4ff;
     text-align: center;
     transition: opacity 0.5s ease;
@@ -2018,17 +2018,15 @@
 
     <!-- Loading text overlay -->
 <div id="loading-screen">
-   /$$$$$$$$                       /$$             /$$     /$$                            /$$$$$$  /$$$$$$
-| $$_____/                        | $$            | $$    |__/                           /$$__  $$|_  $$_/
-| $$       /$$$$$$/$$$$  /$$   /$$| $$  /$$$$$$  /$$$$$$   /$$  /$$$$$$  /$$$$$$$       | $$  \ $$  | $$  
-| $$$$$   | $$_  $$_  $$| $$  | $$| $$ |____  $$|_  $$_/  | $$ /$$__  $$| $$__  $$      | $$$$$$$$  | $$  
-| $$__/   | $$ \ $$ \ $$| $$  | $$| $$  /$$$$$$$  | $$    | $$| $$  \ $$| $$  \ $$      | $$__  $$  | $$  
-| $$      | $$ | $$ | $$| $$  | $$| $$ /$$__  $$  | $$ /$$| $$| $$  | $$| $$  | $$      | $$  | $$  | $$  
-| $$$$$$$$| $$ | $$ | $$|  $$$$$$/| $$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$      | $$  | $$ /$$$$$$
-|________/|__/ |__/ |__/ \______/ |__/ \_______/   \___/  |__/ \______/ |__/  |__/      |__/  |__/|______/
+███████╗███╗   ███╗██╗   ██╗██╗      █████╗ ████████╗██╗ ██████╗ ███╗   ██╗     █████╗ ██╗
+██╔════╝████╗ ████║██║   ██║██║     ██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║    ██╔══██╗██║
+█████╗  ██╔████╔██║██║   ██║██║     ███████║   ██║   ██║██║   ██║██╔██╗ ██║    ███████║██║
+██╔══╝  ██║╚██╔╝██║██║   ██║██║     ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║    ██╔══██║██║
+███████╗██║ ╚═╝ ██║╚██████╔╝███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║    ██║  ██║██║
+╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝  ╚═╝╚═╝
+                                                                                          
                                                                                                           
-                                                                                                          
-                                                                                                          
+                                                                                                                                                                                                                  
 </div>
 
     <!-- Enhanced Animated Background -->
@@ -2310,6 +2308,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
     <script>
+         // Show the loading screen for 3 seconds
+  setTimeout(() => {
+    const loader = document.getElementById('loading-screen');
+    const content = document.getElementById('content');
+
+    loader.classList.add('hide'); // fade out overlay
+    content.classList.add('show'); // show content
+  }, 3000); // 3000ms = 3 seconds
+        
         // Global Variables
         const apiKey = 'AIzaSyAJX0HkLHYcOh0UULKzD2ZkavOpxHIZl7g'; // Replace with your actual API key
         let currentChatId = null;
